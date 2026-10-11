@@ -22,8 +22,7 @@
 
 ## Репозиторий
 
-https://github.com/ТВОЙ-ЛОГИН/wt-lab4-4mvc-glebko
+https://github.com/manressaaa/wt-lab4-4mvc-glebko
 
 ## Опубликованное приложение
-
-(впишешь после публикации)
+https://wt-lab4-4mvc-glebko-1.onrender.com
