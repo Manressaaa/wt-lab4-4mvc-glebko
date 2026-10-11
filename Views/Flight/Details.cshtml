@@ -1,0 +1,59 @@
+@model wt_lab4_4mvc_glebko.Models.Flight
+
+@{
+    ViewData["Title"] = "Информация о рейсе";
+}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow rounded-4">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0">Рейс №@Model.nomer_reisa</h2>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-4">Откуда</dt>
+                        <dd class="col-sm-8">@Model.gorod_vilet</dd>
+
+                        <dt class="col-sm-4">Куда</dt>
+                        <dd class="col-sm-8">@Model.gorod_prilet</dd>
+
+                        <dt class="col-sm-4">Время вылета</dt>
+                        <dd class="col-sm-8">@Model.vremya_vileta.ToString("dd.MM.yyyy HH:mm")</dd>
+
+                        <dt class="col-sm-4">Цена билета</dt>
+                        <dd class="col-sm-8">
+                            <span class="fs-4 fw-bold text-primary">
+                                @Model.cena руб.
+                            </span>
+                        </dd>
+
+                        <dt class="col-sm-4">Свободных мест</dt>
+                        <dd class="col-sm-8">@Model.mesta</dd>
+
+                        <dt class="col-sm-4">Статус продажи</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.dostupno)
+                            {
+                                <span class="badge bg-success">Открыта</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">Закрыта</span>
+                            }
+                        </dd>
+                    </dl>
+
+                    <div class="d-flex gap-2 mt-3">
+                        <a asp-action="Edit" asp-route-id="@Model.nomer_reisa"
+                           class="btn btn-warning">Редактировать</a>
+                        <a asp-action="Index" class="btn btn-secondary">
+                            Назад к списку
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

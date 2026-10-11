@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Авиакомпания";
+}
+
+<div class="container py-5">
+
+    <div class="row align-items-center mb-5">
+        <div class="col-lg-7">
+            <h1 class="display-4 fw-bold text-primary mb-3">
+                Авиакомпания Glebko
+            </h1>
+            <p class="lead text-muted mb-4">
+                Ваш комфорт в моих руках! Удачи.
+            </p>
+            <div class="d-flex gap-2 flex-wrap">
+                <a asp-controller="Flight" asp-action="Index"
+                   class="btn btn-primary btn-lg shadow-sm">
+                    Список рейсов
+                </a>
+                <a asp-controller="Flight" asp-action="Create"
+                   class="btn btn-outline-primary btn-lg shadow-sm">
+                    Добавить рейс
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-5 text-center mt-4 mt-lg-0">
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm rounded-4 border-0">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Расписание рейсов</h5>
+                    <p class="card-text text-muted">
+                        Список всех рейсов.
+                    </p>
+                    <a asp-controller="Flight" asp-action="Index"
+                       class="btn btn-outline-primary">
+                        Перейти
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm rounded-4 border-0">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Добавление рейса</h5>
+                    <p class="card-text text-muted">
+                        Создавайте новые рейсы: указывайте города,
+                        время вылета, цену и количество мест.
+                    </p>
+                    <a asp-controller="Flight" asp-action="Create"
+                       class="btn btn-outline-primary">
+                        Добавить
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm rounded-4 border-0">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Редактирование</h5>
+                    <p class="card-text text-muted">
+                        Изменяйте данные рейса.
+                    </p>
+                    <a asp-controller="Flight" asp-action="Index"
+                       class="btn btn-outline-primary">
+                        Открыть список
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,91 @@
+@model wt_lab4_4mvc_glebko.Models.Flight
+
+@{
+    ViewData["Title"] = "Добавление рейса";
+}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow rounded-4 border-0">
+                <div class="card-body p-4">
+                    <h2 class="mb-4">Добавление рейса</h2>
+
+                    <form asp-action="Create" method="post">
+                        <div class="mb-3">
+                            <label asp-for="nomer_reisa" class="form-label">
+                                Номер рейса
+                            </label>
+                            <input asp-for="nomer_reisa" class="form-control" />
+                            <span asp-validation-for="nomer_reisa" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="gorod_vilet" class="form-label">
+                                Город вылета
+                            </label>
+                            <input asp-for="gorod_vilet" class="form-control" />
+                            <span asp-validation-for="gorod_vilet" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="gorod_prilet" class="form-label">
+                                Город прилёта
+                            </label>
+                            <input asp-for="gorod_prilet" class="form-control" />
+                            <span asp-validation-for="gorod_prilet" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="vremya_vileta" class="form-label">
+                                Время вылета
+                            </label>
+                            <input asp-for="vremya_vileta"
+                                   type="datetime-local"
+                                   class="form-control" />
+                            <span asp-validation-for="vremya_vileta" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="cena" class="form-label">
+                                Цена билета
+                            </label>
+                            <input asp-for="cena" class="form-control" />
+                            <span asp-validation-for="cena" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="mesta" class="form-label">
+                                Свободных мест
+                            </label>
+                            <input asp-for="mesta" class="form-control" />
+                            <span asp-validation-for="mesta" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-check mb-4">
+                            <input asp-for="dostupno" class="form-check-input" />
+                            <label asp-for="dostupno" class="form-check-label">
+                                Продажа открыта
+                            </label>
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-primary">
+                                Сохранить
+                            </button>
+                            <a asp-action="Index" class="btn btn-secondary">
+                                Назад к списку
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
